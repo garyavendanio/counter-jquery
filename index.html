@@ -5,15 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CounterJquery</title>
+    <style>
+        @keyframes animate {
+            from {
+                width: 0;
+            }
+            to {
+                width: 24em;
+            }
+        }
+        
+        @keyframes blinking {
+            from {
+                border-right-color: rgba(255, 255, 255, .75);
+            }
+            to {
+                border-right-color: rgba(255, 255, 255, 0);
+            }
+        }
+        
+        .typewrite {
+            top: 50%;
+            position: relative;
+            border-right: 5px solid antiquewhite;
+            text-align: center;
+            overflow: hidden;
+            width: 24em;
+            white-space: nowrap;
+        }
+        
+        .typewrite-active {
+            animation: animate 4s steps(1000) 1s 1 normal both, blinking .8s steps(1000) infinite normal;
+        }
+    </style>
 </head>
 
 <body>
+    <span class="typewrite" data-period="2000" data-type="[ &quot; Estamos configurando tu cuenta. &quot;, &quot; Estamos creando tu usuario. &quot; ]"></span>
     <div style="height: 2000px;"></div>
     <span class="count-digit">120</span>
     <div style="height: 2000px;"></div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./index.js"></script>
+    <script src="./typewrite.js"></script>
 </body>
 
 </html>
